@@ -1,4 +1,4 @@
-let testTitle = '';
+//preventing form default
 
 let testform = document.getElementById("form");
 
@@ -36,7 +36,7 @@ function testSubmition(event){
 
     }
 
-
+    // array for library books
     const myLibrary = [
         {name:"Across mountains, land & sea", 
         auther: "Azadi, Arman", 
@@ -59,6 +59,8 @@ function testSubmition(event){
     
     //console.log(myLibrary);
     
+
+    //the constructor for a book
     function Book() {
         //some code
     
@@ -74,7 +76,7 @@ function testSubmition(event){
         console.log(testTitle);
     }
     
-    
+    // the function that adds a new book to the library
     function addBookToLibrary(){
         //add stuff
         
