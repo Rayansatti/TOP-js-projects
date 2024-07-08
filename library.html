@@ -5,8 +5,25 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="./library.css">
     </head>
-    <script src="library.js"></script>
+    
     <body>
         <h1>Library</h1>
+            <h4>Add a new book</h4>
+           <form id="form">
+                <label for="bookName">Book title<input type="text" id="bookName"></label>
+                <label for="auther">Auther<input type="text" id="auther"></label>
+                <label for="year">Year<input type="number" id="year"></label>
+                <label for="readStatus">
+                    Status
+                        <select id="readStatus">
+                            <option value="default">Read</option>
+                            <option value="not yet">Not read yet</option>
+                        </select>
+                </label>
+
+                <button id="submit" type="submit">Add a new book</button>
+           </form>
+           <div id="output"></div>
     </body>
+    <script src="./library.js"></script>
 </html>
