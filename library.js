@@ -2,14 +2,10 @@
 
 let testform = document.getElementById("form");
 
-
-
 testform.addEventListener("submit", testSubmition);
 
 function testSubmition(event){
-    //let warn = "preventDefault() won't let you type this";
-
-    //document.getElementById("output").innerHTML += warn;
+    
 
     event.preventDefault();
 
@@ -57,12 +53,12 @@ function testSubmition(event){
         }
     ];
     
-    //console.log(myLibrary);
+    
     
 
     //the constructor for a book
     function Book() {
-        //some code
+        
     
         let Name = document.getElementById("bookName").value;
         let auther = document.getElementById("auther").value;
@@ -73,21 +69,66 @@ function testSubmition(event){
         this.auther = auther;
         this.year = year;
         this.readStatus = readStatus;
-        console.log(testTitle);
+        //console.log(testTitle);
     }
     
     // the function that adds a new book to the library
     function addBookToLibrary(){
-        //add stuff
+        
         
         let newBook = new Book();
         myLibrary.push(newBook);
-        console.log(myLibrary);
-        console.log(newBook);
+        //console.log(myLibrary);
+        //console.log(newBook);
+  
       
     }
+
+
+    function createNewDiv(){
+       
+       for(let a = 0; a <= myLibrary.length; a++){
+        let newDiv = document.createElement('div');
+        newDiv.id = 'bookCard';
+        return
+       }
+
+    }
+
+    
+
+    function bookDisplay(){
+        for(let x in myLibrary){
+            let bookObject = myLibrary[x];
+
+            
+
+            //console.log(bookObject);
+
+            let bookDetails = "";
+
+           // for(let j in myLibrary){
+                    for(let y in bookObject) {
+                        bookDetails = myLibrary[x][y] + " / ";
+                       // document.getElementById('bookCard').innerHTML = bookDetails;
+                       console.log(bookDetails);
+                    };
+                   
+               // }
+                }
+                
+
+           
+
+            
+        }
+
+        
+    
     
     addBookToLibrary();
+    createNewDiv()
+    bookDisplay();
     
 }
  
