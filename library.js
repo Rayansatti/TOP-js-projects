@@ -85,53 +85,66 @@ function testSubmition(event){
     }
 
 
-    function createNewDiv(){
-       
-       for(let a = 0; a <= myLibrary.length; a++){
-        let newDiv = document.createElement('div');
-        newDiv.id = 'bookCard';
-        return
-       }
+  
+    //creates Dom elements to wrap and display the books
+    let bookShelf = document.getElementById("output");
+    let ulElement = document.createElement("div");
+    ulElement.textContent = "";
+    ulElement.id = "ulElement";
 
-    }
 
     
-
     function bookDisplay(){
+
+        //accesses objects within mylibrary array and 
+        //adds their key value pairs into another array to create array or arrays
+        
+        let booksArr = [];
         for(let x in myLibrary){
             let bookObject = myLibrary[x];
+             //console.log(typeof bookObject);
 
+             
+             Object.entries(bookObject).forEach(([key, value]) => {
+                    //console.log(key + ": " + value);
+                    booksArr.push(key + ": " + value);
+                    
+                })
+             //console.log(typeof bookObject);
+             //console.log(booksArr);
             
-
-            //console.log(bookObject);
-
-            let bookDetails = "";
-
-           // for(let j in myLibrary){
-                    for(let y in bookObject) {
-                        bookDetails = myLibrary[x][y] + " / ";
-                       // document.getElementById('bookCard').innerHTML = bookDetails;
-                       console.log(bookDetails);
-                    };
-                   
-               // }
-                }
-                
-
-           
 
             
         }
 
+
+        //separate each book details and sends it to be displayed in the DOM
+        let chunckSize = 4;
+        let chunck = [];
+
+        for(let i = 0; i < booksArr.length; i += chunckSize){
+            chunck.push(booksArr.slice(i, i + chunckSize));
+        }
+        chunck.forEach((item) => {
+             
+            const section = document.createElement("section");
+            section.textContent = item;
+
+            ulElement.appendChild(section);
+
+            console.log(item)
+            
+        })
+        }
+
         
+
+        
+        bookShelf.appendChild(ulElement);
     
     
     addBookToLibrary();
-    createNewDiv()
     bookDisplay();
+
     
 }
- 
-
-
-
