@@ -84,6 +84,10 @@ function testSubmition(event){
       
     }
 
+    //prototype to remove books
+    Book.prototype.removeBook = function(){
+        
+    }
 
   
     //creates Dom elements to wrap and display the books
@@ -107,11 +111,15 @@ function testSubmition(event){
              
              Object.entries(bookObject).forEach(([key, value]) => {
                     //console.log(key + ": " + value);
+                    
                     booksArr.push(key + ": " + value);
+                   
                     
                 })
              //console.log(typeof bookObject);
-             //console.log(booksArr);
+             
+          
+             console.log(booksArr);
             
 
             
@@ -126,13 +134,21 @@ function testSubmition(event){
             chunck.push(booksArr.slice(i, i + chunckSize));
         }
         chunck.forEach((item) => {
+
+            const removeButton = document.createElement("button");
+
+            removeButton.textContent = 'Remove';
+            removeButton.id = 'reomveButton';
              
             const section = document.createElement("section");
-            section.textContent = item;
+            
+            section.textContent = (item + "\n");
 
             ulElement.appendChild(section);
 
-            console.log(item)
+            section.appendChild(removeButton);
+
+            console.log( typeof item)
             
         })
         }
