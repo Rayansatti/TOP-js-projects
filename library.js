@@ -84,10 +84,10 @@ function testSubmition(event){
       
     }
 
-    //prototype to remove books
-    Book.prototype.removeBook = function(){
-        
-    }
+    
+
+   
+    
 
   
     //creates Dom elements to wrap and display the books
@@ -149,6 +149,16 @@ function testSubmition(event){
             section.appendChild(removeButton);
 
             console.log( typeof item)
+
+
+             //remove books
+            removeButton.addEventListener("click", function(){
+
+                //what happens after clicking the button
+                section.textContent = "";
+                
+                
+            })
             
         })
         }
@@ -157,6 +167,8 @@ function testSubmition(event){
 
         
         bookShelf.appendChild(ulElement);
+
+        
     
     
     addBookToLibrary();
