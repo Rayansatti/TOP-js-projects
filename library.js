@@ -34,23 +34,7 @@ function testSubmition(event){
 
     // array for library books
     const myLibrary = [
-        {name:"Across mountains, land & sea", 
-        auther: "Azadi, Arman", 
-        year: "2024",
-        readStatus: "read"
-        },
-    
-        {name:"Act of defiance", 
-        auther: "Andrews, Brian", 
-        year: "2024",
-        readStatus: "read"
-        },
-    
-        {name:"Alaska", 
-        auther: "Kirkland, Erin", 
-        year: "2024",
-        readStatus: "read"
-        }
+        
     ];
     
     
@@ -69,25 +53,23 @@ function testSubmition(event){
         this.auther = auther;
         this.year = year;
         this.readStatus = readStatus;
+        
         //console.log(testTitle);
     }
+
     
+    let newBook = new Book();
     // the function that adds a new book to the library
     function addBookToLibrary(){
         
         
-        let newBook = new Book();
+       
         myLibrary.push(newBook);
         //console.log(myLibrary);
         //console.log(newBook);
   
       
     }
-
-    
-
-   
-    
 
   
     //creates Dom elements to wrap and display the books
@@ -136,31 +118,76 @@ function testSubmition(event){
         chunck.forEach((item) => {
 
             const removeButton = document.createElement("button");
+            const changeStatus = document.createElement("button");
+            
 
             removeButton.textContent = 'Remove';
             removeButton.id = 'reomveButton';
+            let status = `${item[3]}`
+            
+
+            changeStatus.textContent = status;
+            removeButton.id = 'changeStatus';
              
             const section = document.createElement("section");
+
             
-            section.textContent = (item + "\n");
+                
+            section.textContent = (`${item[0]}  ${item[1]} ${item[2]}` );
+                  
+            
+            
 
             ulElement.appendChild(section);
 
             section.appendChild(removeButton);
+            section.appendChild(changeStatus);
 
-            console.log( typeof item)
+            console.log(item)
 
 
              //remove books
             removeButton.addEventListener("click", function(){
 
                 //what happens after clicking the button
-                section.textContent = "";
+                section.textContent = "";});
+
+               //the prototype for status change
+
+               Book.prototype.change = function(){
+                let currentStatus = this.readStatus;
+                //console.log(currentStatus);
+
+                if(currentStatus === "Read"){
+
+                    changeStatus.textContent  = "Not read yet";
+                    this.readStatus = "Not read yet"
+                    console.log(currentStatus);
+                }else{
+                    changeStatus.textContent  = "Read";
+                    this.readStatus = "Read"
+                    console.log(currentStatus);
+                }
+             } 
+               
+
+            
+
+                //changes reading ststus
+             changeStatus.addEventListener("click",  function(){
+                newBook.change();
+
+             })
+
+             
+             
                 
                 
             })
+
+             
             
-        })
+        
         }
 
         
