@@ -34,6 +34,24 @@ function testSubmition(event){
 
     // array for library books
     const myLibrary = [
+        {
+            name : "first book",
+            auther : "auther",
+            year : "2020",
+            readStatus : "Read"
+        },
+        {
+            name : "second book",
+            auther : "auther",
+            year : "2020",
+            readStatus : "Read"
+        },
+        {
+            name : "third book",
+            auther : "auther",
+            year : "2020",
+            readStatus : "Read"
+        }
         
     ];
     
@@ -94,7 +112,7 @@ function testSubmition(event){
              Object.entries(bookObject).forEach(([key, value]) => {
                     //console.log(key + ": " + value);
                     
-                    booksArr.push(key + ": " + value);
+                    booksArr.push(value);
                    
                     
                 })
@@ -130,10 +148,15 @@ function testSubmition(event){
             removeButton.id = 'changeStatus';
              
             const section = document.createElement("section");
-
+             let firstI = item[0];
+             let secondI = item[1];
+             let thirdI = item[2];
             
                 
-            section.textContent = (`${item[0]}  ${item[1]} ${item[2]}` );
+            section.textContent = (
+            `${firstI}.
+            ${secondI}.
+            ${thirdI}` );
                   
             
             

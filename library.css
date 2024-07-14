@@ -12,33 +12,57 @@ h1 {
 
 #output section:nth-child(1) {
     
-    background-color: blueviolet;
+    background-color: rgb(183, 143, 221);
     gap: 5px;
     grid-column: 2/ 3;
     grid-row: 1 / 2;
     margin: 5px;
+    padding: 5px;
+    border: 2px solid blueviolet;
+    border-radius: 15px;
+    min-width: 100px;
+    min-height: 150px;
 }
 
 #output section:nth-child(2) {
     
-    background-color: rgb(198, 226, 43);
+    background-color: rgb(183, 143, 221);
     gap: 5px;
     grid-column: 3 / 4 ;
     margin: 5px;
+    border: 2px solid blueviolet;
+    border-radius: 15px;
 }
 
 #output section:nth-child(3) {
     
-    background-color: rgb(198, 226, 43);
+    background-color: rgb(183, 143, 221);
     gap: 5px;
     grid-column: 2 / 3 ;
     grid-row: 2 / 3;
     margin: 5px;
+    border: 2px solid blueviolet;
+    border-radius: 15px;
 }
 #output section:nth-child(4) {
     
-    background-color: rgb(198, 226, 43);
+    background-color: rgb(183, 143, 221);
     gap: 5px;
     grid-column: 3 / 4 ;
     margin: 5px;
+    border: 2px solid blueviolet;
+    border-radius: 15px;
+}
+
+#removeButton {
+    padding: 1px;
+    display: block;
+    align-items: center;
+    margin: 15px;
+    border: 2px solid blueviolet;
+    border-radius: 15px;
+}
+
+#readS {
+    background-color: chartreuse;
 }
